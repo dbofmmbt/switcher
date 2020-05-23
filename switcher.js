@@ -1,21 +1,10 @@
-
-
-chrome.commands.onCommand.addListener(function(command) {
-    switch(command){
-        case "toggle-switcher":
-            return launch_switcher();
-        default:
-            break;
-    }
-  });
-
 function make_switch(text){
     chrome.tabs.query(
         {},
         function(tabs){
             let matched_tab = find_match(tabs, text);
             if (matched_tab != null){
-                chrome.tabs.update(matched_tab.id, { selected: true })
+                chrome.tabs.update(matched_tab.id, { active: true })
             }
         }
     );

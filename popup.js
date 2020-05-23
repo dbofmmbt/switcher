@@ -1,11 +1,9 @@
 document.querySelector("#switcher-search").addEventListener(
     "keyup",
     function(event){
-        let enter = 13;
-        if (event.keyCode == enter){
+        if (event.key == "Enter"){
             event.preventDefault();
-            
-            console.log("SWITCHER: ", event);
+
             let text = event.target.value;
             make_switch(text);
         }
